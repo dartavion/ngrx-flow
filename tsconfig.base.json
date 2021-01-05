@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ngrx-flow/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@ngrx-flow/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@ngrx-flow/planets": ["libs/planets/src/index.ts"],
+      "@ngrx-flow/people": ["libs/people/src/index.ts"],
+      "@ngrx-flow/reducers": ["libs/reducers/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

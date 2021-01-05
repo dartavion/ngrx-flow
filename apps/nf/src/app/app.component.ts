@@ -8,6 +8,6 @@ import { Message } from '@ngrx-flow/api-interfaces';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
+  hello$ = this.http.get('/api/hello');
   constructor(private http: HttpClient) {}
 }

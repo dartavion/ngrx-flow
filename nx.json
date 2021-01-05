@@ -35,6 +35,15 @@
     },
     "api-interfaces": {
       "tags": []
+    },
+    "planets": {
+      "tags": []
+    },
+    "people": {
+      "tags": []
+    },
+    "reducers": {
+      "tags": []
     }
   }
 }

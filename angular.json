@@ -184,6 +184,84 @@
           }
         }
       }
+    },
+    "planets": {
+      "projectType": "library",
+      "root": "libs/planets",
+      "sourceRoot": "libs/planets/src",
+      "prefix": "ngrx-flow",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/planets/tsconfig.lib.json",
+              "libs/planets/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/planets/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/planets"],
+          "options": {
+            "jestConfig": "libs/planets/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "people": {
+      "projectType": "library",
+      "root": "libs/people",
+      "sourceRoot": "libs/people/src",
+      "prefix": "ngrx-flow",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/people/tsconfig.lib.json",
+              "libs/people/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/people/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/people"],
+          "options": {
+            "jestConfig": "libs/people/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "reducers": {
+      "projectType": "library",
+      "root": "libs/reducers",
+      "sourceRoot": "libs/reducers/src",
+      "prefix": "ngrx-flow",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/reducers/tsconfig.lib.json",
+              "libs/reducers/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/reducers/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/reducers"],
+          "options": {
+            "jestConfig": "libs/reducers/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
