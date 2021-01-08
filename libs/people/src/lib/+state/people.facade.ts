@@ -14,7 +14,7 @@ export class PeopleFacade {
   loaded$ = this.store.pipe(select(PeopleSelectors.getPeopleLoaded));
   allPeople$ = this.store.pipe(select(PeopleSelectors.getAllPeople));
   count$ = this.store.pipe(select(PeopleSelectors.getCount));
-  selectedPeople$ = this.store.pipe(select(PeopleSelectors.getSelected));
+  // selectedPeople$ = this.store.pipe(select(PeopleSelectors.getSelected));
 
   constructor(private store: Store) {}
 
