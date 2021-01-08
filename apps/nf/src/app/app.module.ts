@@ -7,13 +7,30 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { StoreRouterConnectingModule, RouterState } from '@ngrx/router-store';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { en_US, NZ_I18N } from 'ng-zorro-antd/i18n';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzMenuModule } from 'ng-zorro-antd/menu';
+import { NzListModule } from 'ng-zorro-antd/list';
+
+registerLocaleData(en);
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    NzLayoutModule,
+    NzListModule,
+    NzBreadCrumbModule,
+    NzIconModule,
+    NzMenuModule,
     HttpClientModule,
     AppRoutingModule,
     StoreModule.forRoot([], {
@@ -33,8 +50,10 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
       // logOnly: environment.production,
     }),
     EffectsModule.forRoot([]),
+    FormsModule,
+    BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

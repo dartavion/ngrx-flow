@@ -23,8 +23,18 @@ export const getPeopleError = createSelector(
   (state: State) => state.error
 );
 
-export const getAllPeople = createSelector(getPeopleState, (state: State) =>
+export const getAll = createSelector(getPeopleState, (state: State) =>
   selectAll(state)
+);
+
+export const getAllPeople = createSelector(
+  getAll,
+  state => state[0].results
+);
+
+export const getCount = createSelector(
+  getAll,
+  state => state[0].count
 );
 
 export const getPeopleEntities = createSelector(

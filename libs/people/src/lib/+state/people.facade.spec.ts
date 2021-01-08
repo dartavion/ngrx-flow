@@ -19,6 +19,7 @@ import {
   initialState,
   reducer,
 } from './people.reducer';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 interface TestSchema {
   people: State;
@@ -48,6 +49,7 @@ describe('PeopleFacade', () => {
 
       @NgModule({
         imports: [
+          HttpClientTestingModule,
           NxModule.forRoot(),
           StoreModule.forRoot({}),
           EffectsModule.forRoot([]),

@@ -16,8 +16,20 @@
             "polyfills": "apps/nf/src/polyfills.ts",
             "tsConfig": "apps/nf/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/nf/src/favicon.ico", "apps/nf/src/assets"],
-            "styles": ["apps/nf/src/styles.scss"],
+            "assets": [
+              "apps/nf/src/favicon.ico",
+              "apps/nf/src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
+            ],
+            "styles": [
+              "apps/nf/src/theme.less",
+              "apps/nf/src/styles.scss",
+              "node_modules/ng-zorro-antd/ng-zorro-antd.min.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -258,6 +270,32 @@
           "outputs": ["coverage/libs/reducers"],
           "options": {
             "jestConfig": "libs/reducers/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-services": {
+      "projectType": "library",
+      "root": "libs/shared/services",
+      "sourceRoot": "libs/shared/services/src",
+      "prefix": "ngrx-flow",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/shared/services/tsconfig.lib.json",
+              "libs/shared/services/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/shared/services/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/services"],
+          "options": {
+            "jestConfig": "libs/shared/services/jest.config.js",
             "passWithNoTests": true
           }
         }

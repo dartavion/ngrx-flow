@@ -5,5 +5,6 @@ module.exports = {
     '<rootDir>/libs/people',
     '<rootDir>/libs/planets',
     '<rootDir>/libs/reducers',
+    '<rootDir>/libs/shared/services',
   ],
 };

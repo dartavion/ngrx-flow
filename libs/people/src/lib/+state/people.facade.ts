@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import { select, Store, Action } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 
 import * as PeopleActions from './people.actions';
-import * as PeopleFeature from './people.reducer';
 import * as PeopleSelectors from './people.selectors';
 
 @Injectable()
@@ -14,6 +13,7 @@ export class PeopleFacade {
    */
   loaded$ = this.store.pipe(select(PeopleSelectors.getPeopleLoaded));
   allPeople$ = this.store.pipe(select(PeopleSelectors.getAllPeople));
+  count$ = this.store.pipe(select(PeopleSelectors.getCount));
   selectedPeople$ = this.store.pipe(select(PeopleSelectors.getSelected));
 
   constructor(private store: Store) {}

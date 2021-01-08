@@ -7,7 +7,6 @@ export const routes: Routes = [
     pathMatch: 'full',
     redirectTo: 'people'
   },
-
   {
     path: 'people',
     loadChildren: () => import('@ngrx-flow/people').then(mod => mod.PeopleModule)

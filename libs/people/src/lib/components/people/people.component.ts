@@ -1,8 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { PeopleEntity } from '../../+state/people.models';
-
-import * as PeopleActions from '../../+state/people.actions';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { PeopleFacade } from '../../+state/people.facade';
 
 @Component({
@@ -14,12 +10,10 @@ import { PeopleFacade } from '../../+state/people.facade';
 export class PeopleComponent implements OnInit {
 
   constructor(
-    private store: Store<PeopleEntity>,
     public peopleFacade: PeopleFacade
   ) { }
 
   ngOnInit(): void {
-    this.store.dispatch(PeopleActions.loadPeopleSuccess({people: [{id: '3456'}]}))
+    this.peopleFacade.init();
   }
-
 }

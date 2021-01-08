@@ -5,7 +5,7 @@ export const init = createAction('[People Page] Init');
 
 export const loadPeopleSuccess = createAction(
   '[People/API] Load People Success',
-  props<{ people: PeopleEntity[] }>()
+  props<{ people: PeopleEntity }>()
 );
 
 export const loadPeopleFailure = createAction(

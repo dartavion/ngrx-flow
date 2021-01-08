@@ -29,7 +29,7 @@ const peopleReducer = createReducer(
   initialState,
   on(PeopleActions.init, (state) => ({ ...state, loaded: false, error: null })),
   on(PeopleActions.loadPeopleSuccess, (state, { people }) =>
-    peopleAdapter.setAll(people, { ...state, loaded: true })
+    peopleAdapter.setOne(people, { ...state, loaded: true })
   ),
   on(PeopleActions.loadPeopleFailure, (state, { error }) => ({
     ...state,

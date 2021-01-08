@@ -46,6 +46,7 @@
     "@ngrx/store": "^10.1.2",
     "@ngrx/store-devtools": "^10.1.2",
     "@nrwl/angular": "11.0.20",
+    "ng-zorro-antd": "^11.0.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
@@ -58,8 +59,8 @@
     "@angular/language-service": "^11.0.0",
     "@nestjs/schematics": "^7.0.0",
     "@nestjs/testing": "^7.0.0",
-    "@ngrx/schematics": "10.0.0",
-    "@ngrx/store-devtools": "10.0.0",
+    "@ngneat/spectator": "^6.1.2",
+    "@ngrx/schematics": "10.1.2",
     "@nrwl/cli": "11.0.20",
     "@nrwl/cypress": "11.0.20",
     "@nrwl/jest": "11.0.20",
@@ -79,6 +80,7 @@
     "ts-jest": "26.4.0",
     "ts-node": "~9.1.1",
     "tslint": "~6.1.0",
-    "typescript": "~4.0.3"
+    "typescript": "~4.0.3",
+    "uuid": "^8.3.2"
   }
 }

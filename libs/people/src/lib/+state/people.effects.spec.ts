@@ -10,6 +10,8 @@ import { hot } from '@nrwl/angular/testing';
 
 import { PeopleEffects } from './people.effects';
 import * as PeopleActions from './people.actions';
+import { HttpClient } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('PeopleEffects', () => {
   let actions: Observable<any>;
@@ -17,7 +19,7 @@ describe('PeopleEffects', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [NxModule.forRoot()],
+      imports: [HttpClientTestingModule, NxModule.forRoot()],
       providers: [
         PeopleEffects,
         DataPersistence,
@@ -26,7 +28,7 @@ describe('PeopleEffects', () => {
       ],
     });
 
-    effects = TestBed.get(PeopleEffects);
+    effects = TestBed.inject(PeopleEffects);
   });
 
   describe('init$', () => {
@@ -34,7 +36,7 @@ describe('PeopleEffects', () => {
       actions = hot('-a-|', { a: PeopleActions.init() });
 
       const expected = hot('-a-|', {
-        a: PeopleActions.loadPeopleSuccess({ people: [] }),
+        a: PeopleActions.loadPeopleSuccess({ people: {id: '', count: 0, results: [], previous: '', next: ''} }),
       });
 
       expect(effects.init$).toBeObservable(expected);
